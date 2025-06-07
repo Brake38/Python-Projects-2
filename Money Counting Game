@@ -1,0 +1,35 @@
+# Chase Brake
+# ITEC2270
+
+# Variables - The value of each coin used for the Money Counting Game.
+
+PENNY = 0.01
+NICKEL = 0.05
+DIME = 0.10
+QUARTER = 0.25
+DOLLAR = 1.00
+
+# Enter the number of pennies, nickels, dimes, and quarters.
+pennies = float(input("Please enter the number of pennies:"))
+nickels = float(input("Please enter the number of nickels:"))
+dimes = float(input("Please enter the number of dimes:"))
+quarters = float(input("Please enter the number of quarters:"))
+
+# Assigning variable values to each coin type.
+pennies *= PENNY
+nickels *= NICKEL
+dimes *= DIME
+quarters *= QUARTER
+
+# Total value of all coins entered.
+total_value = (pennies + nickels + dimes + quarters)
+
+# Determine results of the Money Counting Game.
+if total_value > DOLLAR:
+    print("Oops! Try again. The value entered is greater than a dollar.")
+else: 
+    if total_value == DOLLAR:
+        print("Winner! Winner! Chicken Dinner! You have exactly one dollar!")
+    else:
+        if total_value < DOLLAR:
+            print("Oops! Try again. The value entered is less than a dollar.")
