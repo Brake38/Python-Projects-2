@@ -1,0 +1,25 @@
+# Chase Brake
+# ITEC 2270
+
+# This program generates a seven-digit lottery number
+# and displays the contents of the lottery list
+
+# Importing the random module so random numbers may be 
+# obtained
+import random
+
+# Creating main function
+def main():
+    
+# Creating a list to hold the lottery numbers
+    lottery_numbers = []
+
+# Implementing for loop to generate seven numbers
+# and append the numbers to the lottery_numbers list
+# followed by printing the output of the list. 
+    for num in range(7):
+        lottery_numbers.append(random.randint(0,9))
+    for numerber in lottery_numbers:
+        print('The winning lottery numbers are: ', lottery_numbers)
+        break
+main()
