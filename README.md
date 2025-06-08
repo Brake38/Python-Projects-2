@@ -2,7 +2,7 @@
 
 This repository is a continuation of additional Python programming projects I have completed during my coursework.
 
-##Projects Included
+## Projects Included
 
 **Money Counting Game**
 This program takes the number of various coins entered by the user to determine if the value is less than, equal to, or greater than a one dollar amount. 
