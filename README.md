@@ -7,7 +7,7 @@ This repository is a continuation of additional Python programming projects I ha
 **Money Counting Game**
 This program takes the number of various coins entered by the user to determine if the value is less than, equal to, or greater than a one dollar amount. 
 
-**Factorial**
+**Factorial Calculator**
 This program allows a user to enter a nonnegative integer and then uses a loop to calculate the factorial of that number. 
 
 **Rock, Paper, Scissors Game**
