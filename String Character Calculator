@@ -1,0 +1,31 @@
+# Chase Brake
+# ITEC 2270
+
+# This program allows a user to enter a string
+# and displays the most frequently used 
+# character within the string.
+
+# Creating main function
+def main():
+
+# Variables begin at 0 and blank.
+    count = 0
+    character = ""
+
+# Getting a string from user.
+    my_string = input('Please enter a sentence: ')
+
+# Implementing for loop, in operator, if statement, and 
+# count method to create block to count most number of
+# characters within the entered sentence.
+    for ch in my_string:
+        if ch.isalpha():
+            if my_string.count(ch) > count:
+                count = my_string.count(ch)
+                character = ch
+
+# Output prints the most frequently used character in the sentence.
+    print(f'The most frequently appeared character is, {character}.')
+
+# Calling main function
+main()
