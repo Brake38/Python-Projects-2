@@ -1,0 +1,81 @@
+# Chase Brake
+# ITEC 2270
+
+# This program reads numerical data from a file, performs a series
+# of calculations on the data, and writes the results to an output 
+# file.
+
+import os
+
+# Creating function
+def main():
+
+# Initializing accumulator and variable
+    total = 0.0
+    count = 5  
+
+# Implementing the exception handler
+    try:
+
+# open the requested file.
+        infile = open('input.txt', 'r') 
+
+# Read numbers from the file
+        num1 = int(infile.readline())
+        num2 = int(infile.readline())
+        num3 = int(infile.readline())
+        num4 = int(infile.readline())
+        num5 = int(infile.readline())
+
+# Closing file
+        infile.close()
+
+# Calculating the total sum of all numbers within file
+        total_sum = num1 + num2 + num3 + num4 + num5
+
+# Calculating the average of all numbers within file
+        average = float (total_sum) / count
+
+# Using "with" statement to reopen file and for loop to obtain min and max
+        with open('input.txt','r') as f:
+            min, max = float('inf'), float('-inf')
+            for line in f:
+                next_num = float(line)
+                if next_num < min:
+                    min = next_num
+                elif next_num > max:
+                    max = next_num
+
+# Print the calculated data
+        print (f'The numbers are: {num1}, {num2}, {num3}, {num4}, {num5}')
+        print (f'The total sum is: {total_sum}')
+        print (f'The total average is: {average:.1f}')
+        print ('The maximum number is: ', max)
+        print ('The minimum number is: ', min)
+
+# Using "with" statement to open outfile and write calculated data to outfile
+        print('The following has been written to the outfile: ')
+        with open('output.txt', 'w') as f:
+            data = [f'Sum: {total_sum}', f'Average: {average:.1f}', f'Max: {max}', f'Min: {min}']
+            for line in data:
+                f.write(line + '\n')
+                print(line)
+
+# Read output file and display contents
+        print('The following integers are contained within the outfile: ')
+        with open('output.txt', 'r') as f:
+            contents = f.read()
+            print(contents)
+        
+
+# Exception handling 
+    except ValueError:
+        print('Error! Invalid number discovered within the file.')
+    except FileNotFoundError:
+        print('Error! File does not exist.')
+    except:
+        print('An error occurred.')
+
+# Call the main function
+if __name__ == '__main__':
+    main()
