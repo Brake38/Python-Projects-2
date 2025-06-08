@@ -1,0 +1,86 @@
+# Chase Brake
+# ITEC 2270
+
+# This program allows the user to play
+# Rock, Paper, Scissors
+
+#import the random module
+import random 
+
+while True:
+
+    #Welcome message
+    print("Welcome to Rock, Paper, Scissors! When prompted, choose from the following: \
+        \n 1 for Rock \n 2 for Paper \n 3 for Scissors")
+
+    #Computer will choose a random number 1-3.
+    computer_choice = random.randint(1, 3)
+
+    #User will input a valid integer
+    user_choice = int(input("Please enter a valid number. 1, 2, or 3: "))
+
+    #Implementing a while loop to ensure users enters valid integer.
+    while user_choice > 3 or user_choice < 1:
+        user_choice = int(input("Oops! You chose an invalid number. Please select again: "))
+
+
+    #if, elif, and else statement for computer choice and assigning
+    #variable to corresponding value choice.
+    if computer_choice == 1:
+        computer_selection = "Rock"
+    elif computer_choice == 2:
+        computer_selection = "Paper"
+    else: 
+        computer_selection = "Scissors"
+        
+    #if, elif, and else statement for user choice and assigning
+    #variable to corresponding value choice.
+    if user_choice == 1:
+        user_selection = "Rock"
+    elif user_choice == 2:
+        user_selection = "Paper"
+    else:
+        user_selection = "Scissors"
+
+    #Printing the computer and user selections.
+    print("The computer chose", computer_selection)
+    print("You chose", user_selection)
+
+    #Using if and elif statements to determine who wins.
+    if computer_selection == "Rock" and user_selection == "Scissors":
+        winner = "Computer"
+        print("Rock smashes scissors! Computer wins!")
+    elif user_selection == "Rock" and computer_selection == "Scissors":
+        winner = "You"
+        print("Rock smashes scissors! You win!")
+
+    if computer_selection == "Scissors" and user_selection == "Paper":
+        winner = "Computer"
+        print("Scissors cuts paper! Computer wins!")
+    elif user_selection == "Scissors" and computer_selection == "Paper":
+        winner = "You"
+        print("Scissors cut paper! You win!")
+
+    if computer_selection == "Paper" and user_selection == "Rock":
+        winner = "Computer"
+        print("Paper wraps rock! Computer wins!")
+    elif user_selection == "Paper" and computer_selection == "Rock":
+        winner = "You"
+        print("Paper wraps rock! You win!")
+
+    #Message if there is a tie.
+    if computer_selection == user_selection:
+        print("We have a tie! Please try again.")
+
+    #Asking user if they would like to play again. 
+    print("Would you like to play again? (Yes/No)")
+
+    #Including while loop to ensure that program ends if user no longer
+    #wants to play.
+    response = input()
+    if response == "yes":
+        continue
+    else: 
+        if response == "no":
+            print("Thank you for playing Rock, Paper, Scissors! Goodbye") 
+            break
