@@ -1,6 +1,3 @@
-# Chase Brake
-# ITEC2270
-
 # Variables - The value of each coin used for the Money Counting Game.
 
 PENNY = 0.01
